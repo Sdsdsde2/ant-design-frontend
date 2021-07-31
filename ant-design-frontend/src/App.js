@@ -1,8 +1,10 @@
 import './App.css';
-import { Layout, Menu, PageHeader, Avatar, Form, Input, Switch, Button, Divider } from 'antd';
+import { Layout, Menu, Dropdown, PageHeader, Avatar, Form, Input, Switch, Button, Divider } from 'antd';
 import { AntDesignOutlined } from '@ant-design/icons';
 
 const { Header, Content } = Layout;
+
+const {SubMenu} = Menu;
 
 function App() {
   return (
@@ -15,6 +17,12 @@ function App() {
             <Menu.Item key="1">Services</Menu.Item>
             <Menu.Item key="2">Projects</Menu.Item>
             <Menu.Item key="3">Teams</Menu.Item>
+
+            <SubMenu key="sub1" title="Mona Lisa" style={{left: "1250px"}}>
+              <Menu.Item key="4">Option 9</Menu.Item>
+              <Menu.Item key="5">Option 10</Menu.Item>
+              <Menu.Item key="6">Option 11</Menu.Item>
+            </SubMenu>
           </Menu>
         </Header>
 

@@ -35,49 +35,49 @@ export default class Profile extends Component {
                     label="Full name"
                     name="fullname"
                     >
-                    <Input />
+                        <Input placeholder={this.props.user.first_name + ' ' + this.props.user.last_name}/>
                     </Form.Item>
 
                     <Form.Item
                     label="Email"
                     name="email"
                     >
-                    <Input />
+                        <Input placeholder={"thisisafakeemail@gmail.com"}/>
                     </Form.Item>
 
                     <Form.Item
                     label="Timezone"
                     name="timezone"
                     >
-                    <Input />
+                        <Input placeholder={"CST: UTC−06:00"}/>
                     </Form.Item>
 
                     <Form.Item label="Preferences">
-                    <p className="ant-slider-title">Notify me when tasks are updated</p>
-                    <Switch className="ant-slider"/>
-                    <p className="ant-slider-desc">Toggle on to receive notifications in your email when tasks are updated</p>
-                    <Divider className="ant-divider"/>
+                        <p className="ant-slider-title">Notify me when tasks are updated</p>
+                        <Switch className="ant-slider"/>
+                        <p className="ant-slider-desc">Toggle on to receive notifications in your email when tasks are updated</p>
+                        <Divider className="ant-divider"/>
                     </Form.Item>
 
                     <Form.Item className="ant-slider-item">
-                    <p className="ant-slider-title">Notify me when projects are updated</p>
-                    <Switch className="ant-slider"/>
-                    <p className="ant-slider-desc">Toggle on to receive notifications in your email when projects are updated</p>
-                    <Divider className="ant-divider"/>
+                        <p className="ant-slider-title">Notify me when projects are updated</p>
+                        <Switch className="ant-slider"/>
+                        <p className="ant-slider-desc">Toggle on to receive notifications in your email when projects are updated</p>
+                        <Divider className="ant-divider"/>
                     </Form.Item>
 
                     <Form.Item className="ant-slider-item">
-                    <p className="ant-slider-title">Notify me when client tasks are updated</p>
-                    <Switch className="ant-slider"/>
-                    <p className="ant-slider-desc">Toggle on to receive notifications in your email when client tasks are updated</p>
-                    <Divider className="ant-divider"/>
+                        <p className="ant-slider-title">Notify me when client tasks are updated</p>
+                        <Switch className="ant-slider"/>
+                        <p className="ant-slider-desc">Toggle on to receive notifications in your email when client tasks are updated</p>
+                        <Divider className="ant-divider"/>
                     </Form.Item>
 
                     <Form.Item className="ant-slider-item">
-                    <p className="ant-slider-title">Dark Mode</p>
-                    <Switch className="ant-slider"/>
-                    <p className="ant-slider-desc">Toggle between light and dark mode</p>
-                    <Divider className="ant-divider"/>
+                        <p className="ant-slider-title">Dark Mode</p>
+                        <Switch className="ant-slider"/>
+                        <p className="ant-slider-desc">Toggle between light and dark mode</p>
+                        <Divider className="ant-divider"/>
                     </Form.Item>
 
                 </Form>

@@ -55,7 +55,8 @@ export default class Login extends Component {
                     <Form.Item label="Password">
                         <Input 
                             name="password"
-                            placeholder="Password" 
+                            placeholder="Password"
+                            type="password"
                             value={this.state.password} 
                             onChange={this.handleChange} 
                         />

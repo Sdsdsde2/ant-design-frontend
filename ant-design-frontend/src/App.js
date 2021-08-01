@@ -63,10 +63,10 @@ export default class App extends Component {
                 <Menu.Item key="2"><Link to="/projects">Projects</Link></Menu.Item>
                 <Menu.Item key="3">Teams</Menu.Item>
 
-                <SubMenu key="sub1" title="Mona Lisa" className="ant-submenu">
+                <SubMenu key="sub1" title={this.state.user.first_name} className="ant-submenu">
                   <Menu.Item key="4"><Link to="/profile">Profile settings</Link></Menu.Item>
                   <Menu.Item key="5"><Link to="/changelog">Changelog</Link></Menu.Item>
-                  <Menu.Item key="6" className="ant-logout">Log out</Menu.Item>
+                  <Menu.Item key="6" className="ant-logout" onClick={this.handleLogout}>Log out</Menu.Item>
                 </SubMenu>
               </Menu>
             </Header>
@@ -75,6 +75,7 @@ export default class App extends Component {
               <Link to="/" />
 
               <Switch>
+
                 <Route exact path="/">
                   <Home />
                 </Route >
@@ -98,10 +99,11 @@ export default class App extends Component {
                 <Route exact path="/changelog">
                   <Changelog />
                 </Route>
-                
-                <Route exact path="/profile">
-                  <Profile />
-                </Route>
+
+                <Route path="/profile" render={props => (
+                  <Profile {... props} user={this.state.user} handleLogin={this.handleLogin} handleLogout={this.handleLogout} loggedInStatus={this.state.loggedInStatus} />
+                )} />
+
               </Switch>
             </Content>
           </Layout>

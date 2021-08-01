@@ -10,7 +10,7 @@ function App() {
   return (
     <div className="App">
       <Layout>
-        <Header style={{ background: 'white' }}>
+        <Header className="ant-header">
           <div className="logo" />
           <Menu mode="horizontal">
             <Menu.Item key="0">Clients</Menu.Item>
@@ -18,15 +18,15 @@ function App() {
             <Menu.Item key="2">Projects</Menu.Item>
             <Menu.Item key="3">Teams</Menu.Item>
 
-            <SubMenu key="sub1" title="Mona Lisa" style={{left: "1250px"}}>
-              <Menu.Item key="4">Option 9</Menu.Item>
-              <Menu.Item key="5">Option 10</Menu.Item>
-              <Menu.Item key="6">Option 11</Menu.Item>
+            <SubMenu key="sub1" title="Mona Lisa" className="ant-submenu">
+              <Menu.Item key="4">Profile settings</Menu.Item>
+              <Menu.Item key="5">Changelog</Menu.Item>
+              <Menu.Item key="6" className="ant-logout">Log out</Menu.Item>
             </SubMenu>
           </Menu>
         </Header>
 
-        <Content style={{ padding: '0 80px' }}>
+        <Content className="ant-content">
           <PageHeader
             className="site-page-header"
             title="Profile"
@@ -48,11 +48,7 @@ function App() {
           <Form
             name="basic"
             layout="vertical"
-            style={{ 
-              float: 'left',
-              paddingLeft: '20px',
-              width: "275px" 
-            }}
+            className="ant-form"
           >
 
             <Form.Item
@@ -77,31 +73,31 @@ function App() {
             </Form.Item>
 
             <Form.Item label="Preferences">
-              <p style={{width: "350px", marginBottom: "-10px", paddingLeft: "55px", textAlign: "left"}}>Notify me when tasks are updated</p>
-              <Switch style={{float: "left"}}/>
-              <p style={{marginTop: "-10px", width: "500px", float: "left", fontSize: "12px", paddingLeft: "55px", textAlign: "left", color: "grey"}}>Toggle on to receive notifications in your email when tasks are updated</p>
-              <Divider style={{borderTop: "2px solid grey", opacity: "30%"}}/>
+              <p className="ant-slider-title">Notify me when tasks are updated</p>
+              <Switch className="ant-slider"/>
+              <p className="ant-slider-desc">Toggle on to receive notifications in your email when tasks are updated</p>
+              <Divider className="ant-divider"/>
             </Form.Item>
 
-            <Form.Item style={{marginTop: "-45px"}}>
-              <p style={{width: "350px", marginBottom: "-10px", paddingLeft: "55px", textAlign: "left"}}>Notify me when projects are updated</p>
-              <Switch style={{float: "left"}}/>
-              <p style={{marginTop: "-10px", width: "500px", float: "left", fontSize: "12px", paddingLeft: "55px", textAlign: "left", color: "grey"}}>Toggle on to receive notifications in your email when projects are updated</p>
-              <Divider style={{borderTop: "2px solid grey", opacity: "30%"}}/>
+            <Form.Item className="ant-slider-item">
+              <p className="ant-slider-title">Notify me when projects are updated</p>
+              <Switch className="ant-slider"/>
+              <p className="ant-slider-desc">Toggle on to receive notifications in your email when projects are updated</p>
+              <Divider className="ant-divider"/>
             </Form.Item>
 
-            <Form.Item style={{marginTop: "-45px"}}>
-              <p style={{width: "350px", marginBottom: "-10px", paddingLeft: "55px", textAlign: "left"}}>Notify me when client tasks are updated</p>
-              <Switch style={{float: "left"}}/>
-              <p style={{marginTop: "-10px", width: "500px", float: "left", fontSize: "12px", paddingLeft: "55px", textAlign: "left", color: "grey"}}>Toggle on to receive notifications in your email when client tasks are updated</p>
-              <Divider style={{borderTop: "2px solid grey", opacity: "30%"}}/>
+            <Form.Item className="ant-slider-item">
+              <p className="ant-slider-title">Notify me when client tasks are updated</p>
+              <Switch className="ant-slider"/>
+              <p className="ant-slider-desc">Toggle on to receive notifications in your email when client tasks are updated</p>
+              <Divider className="ant-divider"/>
             </Form.Item>
 
-            <Form.Item style={{marginTop: "-45px"}}>
-              <p style={{width: "350px", marginBottom: "-10px", paddingLeft: "55px", textAlign: "left"}}>Dark Mode</p>
-              <Switch style={{float: "left"}}/>
-              <p style={{marginTop: "-10px", width: "500px", float: "left", fontSize: "12px", paddingLeft: "55px", textAlign: "left", color: "grey"}}>Toggle between light and dark mode</p>
-              <Divider style={{borderTop: "2px solid grey", opacity: "30%"}}/>
+            <Form.Item className="ant-slider-item">
+              <p className="ant-slider-title">Dark Mode</p>
+              <Switch className="ant-slider"/>
+              <p className="ant-slider-desc">Toggle between light and dark mode</p>
+              <Divider className="ant-divider"/>
             </Form.Item>
 
           </Form>

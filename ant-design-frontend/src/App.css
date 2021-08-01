@@ -39,9 +39,62 @@
   }
 }
 
+.ant-header {
+  background-color: white;
+}
+
 .logo {
   float: left;
 }
+
+.ant-submenu {
+  left: 1250px;
+}
+
+.ant-logout {
+  color: red;
+}
+
+.ant-content {
+  padding: 0 80px;
+}
+
 .avatar {
   float: left;
+}
+
+.ant-form {
+  float: left;
+  padding-left: 20px;
+  width: 275px;
+}
+
+.ant-slider-item {
+  margin-top: -45px;
+}
+
+.ant-slider-title {
+  width: 350px;
+  margin-bottom: -10px;
+  padding-left: 55px;
+  text-align: left;
+}
+
+.ant-slider {
+  float: left;
+}
+
+.ant-slider-desc {
+  margin-top: -10px;
+  width: 500px;
+  float: left;
+  font-size: 12px;
+  padding-left: 55px; 
+  text-align: left;
+  color: grey;
+}
+
+.ant-divider {
+  border-top: 2px solid grey;
+  opacity: 30%;
 }

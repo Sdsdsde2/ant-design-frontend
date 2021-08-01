@@ -1,14 +1,15 @@
 import React, { Component } from 'react'
-import { PageHeader, Avatar, Form, Input, Switch, Button, Divider } from 'antd';
+import { PageHeader, Avatar, Form, Input, Switch, Divider } from 'antd';
 import { AntDesignOutlined } from '@ant-design/icons';
 
-export default class Clients extends Component {
+export default class Home extends Component {
+    
     render() {
         return (
             <div>
                 <PageHeader
                 className="site-page-header"
-                title="Clients"
+                title="Project Tracker"
                 />
 
                 <Avatar
@@ -24,12 +25,7 @@ export default class Clients extends Component {
                     className="avatar"
                 />
 
-                <ul>
-                    <li>First list item</li>
-                    <li>Second list item</li>
-                    <li>Third list item</li>
-                    <li>Fourth list item</li>
-                </ul>
+                
           </div>
         )
     }

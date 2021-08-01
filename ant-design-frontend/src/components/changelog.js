@@ -2,13 +2,13 @@ import React, { Component } from 'react'
 import { PageHeader, Avatar, Form, Input, Switch, Button, Divider } from 'antd';
 import { AntDesignOutlined } from '@ant-design/icons';
 
-export default class Clients extends Component {
+export default class Changelog extends Component {
     render() {
         return (
             <div>
                 <PageHeader
                 className="site-page-header"
-                title="Clients"
+                title="Changelog"
                 />
 
                 <Avatar

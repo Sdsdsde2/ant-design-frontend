@@ -28,6 +28,24 @@
   float: left;
 }
 
+.ant-carousel-container {
+  padding-bottom: 100%;
+}
+
+.ant-carousel {
+  padding-bottom: 35%;
+}
+
+.ant-carousel .slick-dots li.slick-active button {
+  opacity: 1;
+  background: lightgreen;
+}
+
+.ant-carousel .slick-dots li button {
+  opacity: 1;
+  background: black;
+}
+
 .ant-form {
   float: left;
   padding-left: 20px;

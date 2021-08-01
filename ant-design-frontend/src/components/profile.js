@@ -3,10 +3,15 @@ import { PageHeader, Avatar, Form, Input, Switch, Divider } from 'antd';
 import { AntDesignOutlined } from '@ant-design/icons';
 
 export default class Profile extends Component {
+    checkLogin() {
+        if (this.props.loggedInStatus === "NOT_LOGGED_IN")
+            this.props.history.push("/");
+    }
     
     render() {
         return (
             <div>
+                {this.checkLogin()}
                 <PageHeader
                 className="site-page-header"
                 title="Profile"

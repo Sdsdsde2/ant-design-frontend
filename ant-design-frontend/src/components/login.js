@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import Login from './auth/login'
 
-import { PageHeader, Avatar, Form, Input, Button } from 'antd';
+import { PageHeader, Avatar, Button } from 'antd';
 import { UserOutlined } from '@ant-design/icons';
 
 export default class LoginPage extends Component {

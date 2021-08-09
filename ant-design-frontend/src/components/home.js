@@ -25,24 +25,26 @@ export default class Home extends Component {
                 />
 
                 <div className="ant-carousel-container">
-                    <Carousel className="ant-carousel" autoplay effect="fade">
+                    <Carousel className="ant-carousel" autoplay speed="4500">
                         <div>
-                            <h1>Welcome to the Project Tracker</h1>
-                            <h3>some background information</h3>
-                            <h3>information related to the most recent update</h3>
-                            <h3>lets get started!</h3>
+                            <h1>View Your Clients</h1>
+
                         </div>
                         <div>
-                            <h1>Getting Started</h1>
-                            <h3>if you are new here you can register</h3>
-                            <h3>once you have an account you can use the app</h3>
-                            <h3>once you use the app you've used the app</h3>
+                            <h1>View Your Services</h1>
+
                         </div>
                         <div>
-                            <h1>Returning Users</h1>
-                            <h3>if you aren't new here you can login</h3>
-                            <h3>once you have signed in you can use the app</h3>
-                            <h3>once you use the app you've used the app</h3>
+                            <h1>View Your Projects</h1>
+
+                        </div>
+                        <div>
+                            <h1>View Your Teams</h1>
+
+                        </div>
+                        <div>
+                            <h1>Invite Team Members</h1>
+
                         </div>
                     </Carousel>
                 </div>

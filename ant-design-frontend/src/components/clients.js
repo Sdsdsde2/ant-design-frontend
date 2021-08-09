@@ -1,36 +1,67 @@
 import React, { Component } from 'react'
-import { PageHeader, Avatar, Form, Input, Switch, Button, Divider } from 'antd';
-import { AntDesignOutlined } from '@ant-design/icons';
+import { PageHeader, Table } from 'antd';
+
+const data = [
+    {
+        key: 1,
+        client: 'Ant Design Title 1',
+        email: 'fakeemail@gmail.com',
+        phone: '(281) 555 4444',
+        contact: 'John Johnson'
+    },
+    {
+        key: 2,
+        client: 'Ant Design Title 2',
+        email: 'fakeemail@gmail.com',
+        phone: '(281) 555 4444',
+        contact: 'John Johnson'
+    },
+    {
+        key: 3,
+        client: 'Ant Design Title 3',
+        email: 'fakeemail@gmail.com',
+        phone: '(281) 555 4444',
+        contact: 'John Johnson'
+    }
+];
+
+const columns = [
+    {
+      title: 'CLIENT NAME',
+      dataIndex: 'client',
+      key: 'client',
+      width: '30%',
+    },
+    {
+      title: 'EMAIL',
+      dataIndex: 'email',
+      key: 'email',
+      width: '20%',
+    },
+    {
+      title: 'PHONE NUMBER',
+      dataIndex: 'phone',
+      key: 'phone',
+    },
+    {
+      title: 'CONTACT PERSON',
+      dataIndex: 'contact',
+      key: 'contact',
+    },
+];
 
 export default class Clients extends Component {
+
     render() {
         return (
             <div>
                 <PageHeader
-                className="site-page-header"
-                title="Clients"
+                    className="site-page-header"
+                    title="Clients"
                 />
 
-                <Avatar
-                    size={{
-                    xs: 24,
-                    sm: 32,
-                    md: 40,
-                    lg: 64,
-                    xl: 80,
-                    xxl: 100,
-                    }}
-                    icon={<AntDesignOutlined />}
-                    className="avatar"
-                />
-
-                <ul>
-                    <li>First list item</li>
-                    <li>Second list item</li>
-                    <li>Third list item</li>
-                    <li>Fourth list item</li>
-                </ul>
-          </div>
+                <Table columns={columns} dataSource={data} />
+            </div>
         )
     }
 }

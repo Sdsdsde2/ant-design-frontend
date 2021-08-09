@@ -87,3 +87,9 @@
     padding-left: 900px;
     padding-bottom: 100%;
 }
+
+.ant-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

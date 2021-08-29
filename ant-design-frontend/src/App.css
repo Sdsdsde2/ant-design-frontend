@@ -83,13 +83,23 @@
 }
 
 .login-register-option {
-    float: left;
-    padding-left: 900px;
-    padding-bottom: 100%;
+  float: left;
+  padding-left: 900px;
+  padding-bottom: 100%;
 }
 
 .ant-pagination {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.ant-client-search {
+  float: left;
+  width: 250px;
+  margin-bottom: 20px;
+}
+
+.ant-create-client {
+  float: right;
 }

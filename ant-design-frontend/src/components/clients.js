@@ -52,25 +52,6 @@ const columns = [
     },
 ];
 
-const menu = (
-    <Menu>
-        <Menu.Item key="1">
-            Business
-        </Menu.Item>
-        <Menu.Item key="2">
-            Personal
-        </Menu.Item>
-    </Menu>
-)
-
-const personalModal = (
-    <Modal
-        title="Create a client (Personal)"
-    >
-        <p>Hello Modal</p>
-    </Modal>
-)
-
 export default class Clients extends Component {
     constructor(props) {
         super();
@@ -82,6 +63,41 @@ export default class Clients extends Component {
     }
 
     render() {
+        const menu = (
+            <Menu>
+                <Menu.Item key="1" onClick={() => {this.setState({
+                    businessVisible: true
+                })}}>
+                    Business
+                </Menu.Item>
+                <Menu.Item key="2" onClick={() => {this.setState({
+                    personalVisible: true
+                })}}>
+                    Personal
+                </Menu.Item>
+            </Menu>
+        )
+
+        const businessModal = (
+            <Modal
+                title="Create a client (Business)"
+                visible={this.state.businessVisible}
+                onOk={() => {this.setState({businessVisible: false})}}
+            >
+                <p>Hello Business Modal</p>
+            </Modal>
+        )
+
+        const personalModal = (
+            <Modal
+                title="Create a client (Personal)"
+                visible={this.state.personalVisible}
+                onOk={() => {this.setState({personalVisible: false})}}
+            >
+                <p>Hello Personal Modal</p>
+            </Modal>
+        )
+
         return (
             <div>
                 <PageHeader
@@ -93,7 +109,6 @@ export default class Clients extends Component {
                     className="ant-client-search"
                     placeholder="Search clients"
                     prefix={ <SearchOutlined /> }
-                    onSearch={console.log("searching")}
                 />
 
                 <Dropdown overlay={menu}>
@@ -102,12 +117,8 @@ export default class Clients extends Component {
                     </Button>
                 </Dropdown>
 
-                <Modal
-                    title="Create a client (Business)"
-                    visible={this.state.businessVisible}
-                >
-                    <p>Hello Modal</p>
-                </Modal>
+                {businessModal}
+                {personalModal}
 
                 <Table columns={columns} dataSource={data} />
             </div>

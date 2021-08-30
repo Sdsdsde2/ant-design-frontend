@@ -13,8 +13,8 @@ export default class Profile extends Component {
             <div>
                 {this.checkLogin()}
                 <PageHeader
-                className="site-page-header"
-                title="Profile"
+                    className="site-page-header"
+                    title="Profile"
                 />
 
                 <Avatar
@@ -37,22 +37,22 @@ export default class Profile extends Component {
                 >
 
                     <Form.Item
-                    label="Full name"
-                    name="fullname"
+                        label="Full name"
+                        name="fullname"
                     >
                         <Input placeholder={this.props.user.first_name + ' ' + this.props.user.last_name}/>
                     </Form.Item>
 
                     <Form.Item
-                    label="Email"
-                    name="email"
+                        label="Email"
+                        name="email"
                     >
                         <Input placeholder={"thisisafakeemail@gmail.com"}/>
                     </Form.Item>
 
                     <Form.Item
-                    label="Timezone"
-                    name="timezone"
+                        label="Timezone"
+                        name="timezone"
                     >
                         <Input placeholder={"CST: UTC−06:00"}/>
                     </Form.Item>

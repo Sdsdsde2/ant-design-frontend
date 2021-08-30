@@ -2,17 +2,6 @@ import React, { Component } from 'react'
 import { PageHeader, Table, Input, Menu, Dropdown, Button, Modal } from 'antd';
 import { SearchOutlined, CaretDownOutlined } from '@ant-design/icons'
 
-const menu = (
-    <Menu>
-        <Menu.Item key="1">
-            Business
-        </Menu.Item>
-        <Menu.Item key="2">
-            Personal
-        </Menu.Item>
-    </Menu>
-)
-
 // TODO: Change out this 'data' array with client info from backend
 const data = [
     {
@@ -63,12 +52,15 @@ const columns = [
     },
 ];
 
-const businessModal = (
-    <Modal
-        title="Create a client (Business)"
-    >
-        <p>Hello Modal</p>
-    </Modal>
+const menu = (
+    <Menu>
+        <Menu.Item key="1">
+            Business
+        </Menu.Item>
+        <Menu.Item key="2">
+            Personal
+        </Menu.Item>
+    </Menu>
 )
 
 const personalModal = (
@@ -83,6 +75,10 @@ export default class Clients extends Component {
     constructor(props) {
         super();
 
+        this.state = {
+            businessVisible: false,
+            personalVisible: false
+        }
     }
 
     render() {
@@ -106,7 +102,12 @@ export default class Clients extends Component {
                     </Button>
                 </Dropdown>
 
-                businessModal
+                <Modal
+                    title="Create a client (Business)"
+                    visible={this.state.businessVisible}
+                >
+                    <p>Hello Modal</p>
+                </Modal>
 
                 <Table columns={columns} dataSource={data} />
             </div>

@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { PageHeader, Table, Input, Menu, Dropdown, Button, Modal } from 'antd';
+import { PageHeader, Table, Input, Menu, Dropdown, Button, Modal, Steps } from 'antd';
 import { SearchOutlined, CaretDownOutlined } from '@ant-design/icons'
 
 // TODO: Change out this 'data' array with client info from backend
@@ -52,13 +52,31 @@ const columns = [
     },
 ];
 
+const { Step } = Steps;
+
+const steps = [
+    {
+      title: 'General Information',
+      content: 'First-content',
+    },
+    {
+      title: 'Tax & Contact Information',
+      content: 'Second-content',
+    },
+    {
+      title: 'Relationships',
+      content: 'Last-content',
+    },
+];
+
 export default class Clients extends Component {
     constructor(props) {
         super();
 
         this.state = {
             businessVisible: false,
-            personalVisible: false
+            personalVisible: false,
+            currentStep: 0
         }
     }
 
@@ -84,7 +102,29 @@ export default class Clients extends Component {
                 visible={this.state.businessVisible}
                 onOk={() => {this.setState({businessVisible: false})}}
             >
-                <p>Hello Business Modal</p>
+                <Steps current={this.state.currentStep}>
+                    {steps.map(item => (
+                        <Step key={item.title} title={item.title} />
+                    ))}
+                </Steps>
+                <div className="steps-content">{steps[this.state.currentStep].content}</div>
+                <div className="steps-action">
+                    {this.state.currentStep > 0 && (
+                        <Button style={{ margin: '0 8px' }} onClick={() => this.setState({currentStep: this.state.currentStep - 1})}>
+                            Previous
+                        </Button>
+                    )}
+                    {this.state.currentStep < steps.length - 1 && (
+                        <Button type="primary" onClick={() => this.setState({currentStep: this.state.currentStep + 1})}>
+                            Next
+                        </Button>
+                    )}
+                    {this.state.currentStep === steps.length - 1 && (
+                        <Button type="primary">
+                            Done
+                        </Button>
+                    )}
+                </div>
             </Modal>
         )
 

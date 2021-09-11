@@ -22,6 +22,7 @@
 
 .ant-content {
   padding: 0 80px;
+  height: 1000px;
 }
 
 .avatar {
@@ -100,6 +101,30 @@
   margin-bottom: 20px;
 }
 
+.ant-service-search {
+  float: left;
+  width: 250px;
+  margin-bottom: 20px;
+}
+
 .ant-create-client {
   float: right;
+}
+
+.ant-create-service {
+  float: right;
+}
+
+.ant-categories-label {
+  float: right;
+  font-weight: bold;
+  margin-top: -20px;
+  margin-right: -25px;
+  font-size: 13px;
+}
+
+.ant-empty-services-label {
+  font-weight: bold;
+  margin-top: 20px;
+  font-size: 20px;
 }

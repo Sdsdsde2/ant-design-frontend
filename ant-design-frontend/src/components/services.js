@@ -1,35 +1,47 @@
 import React, { Component } from 'react'
-import { PageHeader, Avatar, Form, Input, Switch, Button, Divider } from 'antd';
-import { AntDesignOutlined } from '@ant-design/icons';
+import { PageHeader, Typography, Table, Input, Menu, Dropdown, Button, Modal, Steps } from 'antd';
+import { SearchOutlined, CaretDownOutlined } from '@ant-design/icons'
 
 export default class Services extends Component {
+    constructor(props) {
+        super();
+
+        this.state = {
+            businessVisible: false,
+            personalVisible: false,
+            currentStep: 0
+        }
+    }
+
     render() {
         return (
             <div>
                 <PageHeader
-                className="site-page-header"
-                title="Services"
+                    className="site-page-header"
+                    title="Services"
+                >
+                    <Typography className="ant-categories-label">
+                        View Categories
+                    </Typography>
+                </PageHeader>
+
+                <Input 
+                    className="ant-service-search"
+                    placeholder="Search services"
+                    prefix={ <SearchOutlined /> }
                 />
 
-                <Avatar
-                    size={{
-                    xs: 24,
-                    sm: 32,
-                    md: 40,
-                    lg: 64,
-                    xl: 80,
-                    xxl: 100,
-                    }}
-                    icon={<AntDesignOutlined />}
-                    className="avatar"
-                />
+                <Button className="ant-create-service">
+                        Create Client
+                </Button>
 
-                <ul>
-                    <li>First list item</li>
-                    <li>Second list item</li>
-                    <li>Third list item</li>
-                    <li>Fourth list item</li>
-                </ul>
+                <Typography className="ant-empty-services-label">
+                        You have not created any services yet!
+                </Typography>
+
+                <p>
+                    Click the "Create Service" button to get started.
+                </p>
           </div>
         )
     }

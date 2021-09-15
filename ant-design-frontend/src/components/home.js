@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { PageHeader, Avatar, Carousel } from 'antd';
 import { AntDesignOutlined } from '@ant-design/icons';
 
+// TODO: Re-write as Functional components and use Hooks instead
 export default class Home extends Component {
     render() {
         return (

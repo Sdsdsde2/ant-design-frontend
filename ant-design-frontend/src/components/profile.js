@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { PageHeader, Avatar, Form, Input, Switch, Divider } from 'antd';
 import { AntDesignOutlined } from '@ant-design/icons';
 
+// TODO: Re-write as Functional components and use Hooks instead
 export default class Profile extends Component {
     checkLogin() {
         if (this.props.loggedInStatus === "NOT_LOGGED_IN")

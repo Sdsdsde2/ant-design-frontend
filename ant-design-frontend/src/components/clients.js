@@ -69,6 +69,7 @@ const steps = [
     },
 ];
 
+// TODO: Re-write as Functional components and use Hooks instead
 export default class Clients extends Component {
     constructor(props) {
         super();

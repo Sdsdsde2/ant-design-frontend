@@ -3,6 +3,7 @@ import axios from 'axios';
 
 import { Form, Input, Button } from 'antd';
 
+// TODO: Re-write as Functional components and use Hooks instead
 export default class Login extends Component {
     constructor(props) {
         super(props);

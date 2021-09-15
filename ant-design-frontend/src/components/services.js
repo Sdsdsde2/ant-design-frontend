@@ -36,15 +36,33 @@ const columns = [
     }
 ];
 
+// TODO: Re-write as Functional components and use Hooks instead
 export default class Services extends Component {
     constructor(props) {
         super();
 
         this.state = {
-            businessVisible: false,
-            personalVisible: false,
+            servicesVisible: false,
             currentStep: 0
         }
+    }
+
+    displayServices() {
+        // TODO: Change this to "if fetch resp size is above 0" when finish with backend
+        if (this.state.servicesVisible === true)
+            return (<Table columns={columns} dataSource={data} />)
+        if (this.state.servicesVisible === false)
+            return (
+                <div>
+                    <Typography className="ant-empty-services-label">
+                            You have not created any services yet!
+                    </Typography>
+
+                    <p>
+                        Click the "Create Service" button to get started.
+                    </p>
+                </div>
+            )
     }
 
     render() {
@@ -69,17 +87,7 @@ export default class Services extends Component {
                         Create Client
                 </Button>
 
-                <div>
-                    <Typography className="ant-empty-services-label">
-                            You have not created any services yet!
-                    </Typography>
-
-                    <p>
-                        Click the "Create Service" button to get started.
-                    </p>
-                </div>
-
-                <Table columns={columns} dataSource={data} />
+                {this.displayServices()}
           </div>
         )
     }

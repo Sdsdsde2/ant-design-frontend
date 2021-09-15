@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { PageHeader, Typography, Table, Input, Menu, Dropdown, Button, Modal, Steps } from 'antd';
+import { PageHeader, Typography, Table, Input, Form, Button, Modal} from 'antd';
 import { SearchOutlined } from '@ant-design/icons'
 
 // TODO: Change out this 'data' array with services info from backend
@@ -43,6 +43,7 @@ export default class Services extends Component {
 
         this.state = {
             servicesVisible: false,
+            modalVisible: false,
             currentStep: 0
         }
     }
@@ -66,6 +67,67 @@ export default class Services extends Component {
     }
 
     render() {
+        const newServiceModal = (
+            <Modal
+                title="Create Service"
+                visible={this.state.modalVisible}
+                onOk={() => {this.setState({modalVisible: false})}}
+                className="ant-service-modal"
+            >
+                <Form
+                    name="service-form"
+                    layout="vertical"
+                    className="ant-form"
+                >
+                    <Form.Item label="Service Name">
+                        <Input
+                            name="name"
+                            placeholder="E.g monthly payroll" 
+                            // value={this.state.username} 
+                            // onChange={this.handleChange} 
+                        />
+                    </Form.Item>
+
+                    <Form.Item label="Description">
+                        <Input
+                            name="description"
+                            placeholder="Provide a short description" 
+                            // value={this.state.username} 
+                            // onChange={this.handleChange} 
+                        />
+                    </Form.Item>
+
+                    <Form.Item label="Category">
+                        <Input
+                            name="category"
+                            placeholder="Select a category" 
+                            // value={this.state.username} 
+                            // onChange={this.handleChange} 
+                        />
+                    </Form.Item>
+
+                    <Form.Item label="Price">
+                        <Input
+                            name="price"
+                            placeholder="$" 
+                            // value={this.state.username} 
+                            // onChange={this.handleChange} 
+                        />
+                    </Form.Item>
+
+                    <Form.Item label="Billing Rate">
+                        <Input
+                            name="rate"
+                            placeholder="$" 
+                            // value={this.state.username} 
+                            // onChange={this.handleChange} 
+                        />
+                    </Form.Item>
+
+                </Form>
+            </Modal>
+        )
+
         return (
             <div>
                 <PageHeader
@@ -83,9 +145,14 @@ export default class Services extends Component {
                     prefix={ <SearchOutlined /> }
                 />
 
-                <Button className="ant-create-service">
-                        Create Client
+                <Button
+                    className="ant-create-service"
+                    onClick={() => {this.setState({modalVisible: true})}}
+                >
+                        Create Service
                 </Button>
+
+                {newServiceModal}
 
                 {this.displayServices()}
           </div>

@@ -83,8 +83,6 @@ export default class Services extends Component {
                         <Input
                             name="name"
                             placeholder="E.g monthly payroll" 
-                            // value={this.state.username} 
-                            // onChange={this.handleChange} 
                         />
                     </Form.Item>
 
@@ -92,17 +90,12 @@ export default class Services extends Component {
                         <Input
                             name="description"
                             placeholder="Provide a short description" 
-                            // value={this.state.username} 
-                            // onChange={this.handleChange} 
                         />
                     </Form.Item>
 
                     <Form.Item label="Category">
                         <Input
                             name="category"
-                            placeholder="Select a category" 
-                            // value={this.state.username} 
-                            // onChange={this.handleChange} 
                         />
                     </Form.Item>
 
@@ -110,8 +103,6 @@ export default class Services extends Component {
                         <Input
                             name="price"
                             placeholder="$" 
-                            // value={this.state.username} 
-                            // onChange={this.handleChange} 
                         />
                     </Form.Item>
 
@@ -119,8 +110,6 @@ export default class Services extends Component {
                         <Input
                             name="rate"
                             placeholder="$" 
-                            // value={this.state.username} 
-                            // onChange={this.handleChange} 
                         />
                     </Form.Item>
 
